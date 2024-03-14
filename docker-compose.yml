@@ -32,3 +32,15 @@ services:
       - backend
     depends_on:
       - database
+  
+  app_players:
+    container_name: fastapi-cont
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - backend
+    depends_on:
+      - database
